@@ -17,7 +17,8 @@ type WriteReceipt interface {
 
 // OutFunc 数据输出函数
 // 这个函数约定了接收已处理数据的函数
-type OutFunc[T any] func(out T)
+// 第一个参数接收写入回执的，第二个参数是数据
+type OutFunc[T any] func(receipit WriteReceipt, out T)
 
 // Processor 数据处理器
 // 任意类型数据处理器的约定
